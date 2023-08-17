@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcource_project=self.webpackChunkcource_project||[]).push([[331],{331:(e,c,r)=>{r.r(c),r.d(c,{default:()=>n});var u=r(893);const n=function(){return(0,u.jsx)("div",{children:"mainPage"})}}}]);

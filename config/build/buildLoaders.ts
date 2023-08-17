@@ -39,7 +39,19 @@ export function buildLoaders({isDev}:BuildOption): webpack.RuleSetRule[] {
             ],
           }
     
-
+    const babelLoader = {
+      test: /\.(js|jsx|tsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['@babel/preset-env', { targets: "defaults" }]
+          ]
+        }
+      }
+    }
+    
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -49,6 +61,7 @@ export function buildLoaders({isDev}:BuildOption): webpack.RuleSetRule[] {
     return [
         fileloader,
         svgloader,
+        babelLoader,
         typescriptLoader,
         sassloader,
                
